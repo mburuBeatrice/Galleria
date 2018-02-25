@@ -16,9 +16,9 @@ class Image(models.Model):
     image = models.ImageField(upload_to = '^$')
     image_name = models.CharField(max_length =30)
     image_description = models.CharField(max_length =100)
-    image_location = models.ForeignKey(Location)
-    category = models.ForeignKey(Category)
-    pub_date = models.DateTimeField(auto_now_add=True)
+    image_location = models.ForeignKey(Location, null=True,blank=True)
+    image_category = models.ManyToManyField(Category)
+    pub_date = models.DateTimeField(auto_now_add=True, null=True,blank=True)
 
     def __str__(self):
         return self.image_name
