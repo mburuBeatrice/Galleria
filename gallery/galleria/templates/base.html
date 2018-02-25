@@ -1,3 +1,5 @@
+{% load bootstrap3 %}
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,9 +11,19 @@
    {% else %}
    <title>Ze Galleria</title>
    {% endif %}
+   {% block styles %}
+    {% bootstrap_css %}
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+   {% endblock %}
 </head>
 <body>
     {% block content %}
-    {% endblock %}   
+    <h1 class ='text-center'>Images</h1>
+    {% endblock %} 
+    {% block scripts %}
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+        {% bootstrap_javascript %}
+    {% endblock %}      
 </body>
 </html>
