@@ -26,14 +26,8 @@ class Image(models.Model):
     
     def save_image(self):
         self.save()
-    # def delete_image(self):
-    #     self.delete()
-            
-    # class Meta:
-    #     ordering = ['name']    
-    # try:
-    #     imagey = Image.objects.get(image_description = 'xoxoxoxox')
-    #     print('Image found')
-    # except DoesNotExist:
-    #     print('Image not found.Sorry.')          
-    
+    @classmethod
+    def search_by_category(cls,search_term):
+        galleria = cls.objects.filter(image_category__icontains=search_term)
+
+        return galleria
