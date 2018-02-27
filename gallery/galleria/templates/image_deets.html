@@ -15,11 +15,17 @@
             <div class="uk-card-body">
 
 <h1 class="uk-heading-line uk-text-center"><span>{{item.name}}</span></h1>
+                  <p><span class="uk-label">Name:</span>{{item.image_name}}</p>
                   <p><span class="uk-label">Category:</span>{{item.image_category}}</p>
                   <p><span class="uk-label">Location:</span>{{item.image_location}}</p>
-                  <p><span class="uk-label">Description:</span>{{item.image_description}}</p>
-                  <a class="uk-button uk-button-danger" href="">Copy link</a>
-
+                  <form>
+                    <fieldset class="uk-fieldset">
+                    <div class="uk-margin">
+                            <input class="uk-input" type="text" placeholder="Input" id="myInput" value="{{item.image.url}}">
+                        </div>
+                    <button onclick="myFunction()">Copy text</button>
+                </fieldset>
+            </form>
 
             </div>
         </div>

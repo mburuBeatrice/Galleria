@@ -19,6 +19,17 @@ def search_results(request):
         message = "You haven't searched for any term"
         return render(request, 'search.html',{"message":message}) 
 
+def search_location(request):
+    if 'image' in request.GET and request.GET["image"]:
+        search = request.GET.get("image")
+        searched_images = Image.search_by_location(search) 
+
+        message = f"{search}"
+
+        return render(request, 'search.html', {"message":message,"images":searched_images}) 
+    else:
+        message = "You haven't searched for any term"
+        return render(request, 'location.html',{"message":message}) 
 def image_details(request,image_id):
 
     try:

@@ -12,7 +12,7 @@
       <div class="uk-navbar-left">
   
           <ul class="uk-navbar-nav">
-              <li class="uk-active"><a href="#">HOME</a></li>
+              <li class="uk-active"><a href="/">GALLERIA</a></li>
               <li>
                   <a href="#">CATEGORIES</a>
                   <div class="uk-navbar-dropdown">
@@ -23,7 +23,16 @@
                       </ul>
                   </div>
               </li>
-              <li><a href="#">ABOUT</a></li>
+              <li><a href="#">LOCATION</a>
+              <div class="uk-navbar-dropdown">
+                    <ul class="uk-nav uk-navbar-dropdown-nav">
+                        <li class="uk-active"><a href="#">neworleans</a></li>
+                        <li><a href="#">newyork</a></li>
+                        <li><a href="#">kasabull</a></li>
+                        <li><a href="#">kisumu</a></li>
+                    </ul>
+                </div>
+            </li>
           </ul>
   
       </div>
@@ -32,10 +41,13 @@
           <div class="uk-navbar-item">
           
               <form role="search" action="{% url 'search_results' %}">
-                  <input class="uk-input uk-form-width-small" type="text" placeholder="Search category" name="image">
+                  <input class="uk-input uk-form-width-small" type="text" placeholder="search category" name="image">
                   <button class="uk-button uk-button-default">SUBMIT</button>
               </form>
-          
+              <form role="searchloc" action="{% url 'search_location' %}">
+                    <input class="uk-input uk-form-width-small" type="text" placeholder="search location" name="image">
+                    <button class="uk-button uk-button-default">SUBMIT</button>
+                </form>
           </div>
    
     

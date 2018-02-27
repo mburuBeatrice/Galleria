@@ -31,7 +31,12 @@ class Image(models.Model):
         self.save()
     @classmethod
     def search_by_category(cls,search_term):
-        galleria = cls.objects.filter(image_category__icontains=search_term)
+        galleria = cls.objects.filter(image_category__category_title__icontains=search_term)
 
         return galleria
         
+    @classmethod
+    def search_by_location(cls,search):
+        galleria = cls.objects.filter(image_location__location_name__icontains=search)
+
+        return galleria

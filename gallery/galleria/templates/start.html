@@ -5,25 +5,27 @@
 {% for picture in pictures %}
 <div class="uk-child-width-1-4@m ">
     <div class="uk-flex uk-float-left  uk-margin-medium-left uk-margin-medium-top uk-margin-small-right">
-     
+           
+                 
             <div>
                     <div class="uk-card uk-card-default uk-card uk-card-hover">
-                        <div class="uk-card-header">
-                                <h3 class="uk-card-title">{{picture.image_name}}</h3>        
-                        </div>
                         <div class="uk-card-media-top">
+                                <div class="uk-animation-toggle">
+                                        <div class="uk-card uk-card-default uk-card-body uk-animation-fade uk-animation-reverse">
                                 {% if picture.image %}
                             <img src="{{picture.image.url}}" alt="image ">
                             {% endif %}
                         </div>
+                    </div>
+                </div>
                         <div class="uk-card-footer">
-                                <a class="uk-button uk-button-danger" href="{%url 'image' picture.id%}">More details</a>
-                            </div>
+                                <a href="{%url 'image' picture.id%}" class="uk-button uk-button-text">Read more</a>
+                            </div>    
                     </div>
                    
                 </div>
-   
-    </div>
+            </div>
+    
 </div>
 {% endfor %}
 {% endblock %}

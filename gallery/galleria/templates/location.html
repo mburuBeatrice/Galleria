@@ -1,0 +1,13 @@
+{%extends 'base.html'%} 
+{% block content %}
+{% for image in images %}
+<div class="uk-card uk-card-small uk-card-body uk-width-1-4@m">
+
+{% if images %}    
+<h1>{{image.image_location}}</h1>
+<img src="{{image.image.url}}" alt="image "> 
+</div>
+    {% endfor %}
+  {% endif %}
+  
+{% endblock %}
