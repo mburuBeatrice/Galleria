@@ -1,0 +1,29 @@
+{%extends 'base.html' %}
+{% block content %}
+    {% with item=imagey%}
+<div class="uk-child-width-1-2@m" uk-grid>
+
+
+    <div>
+        <div class="uk-card uk-card-default">
+            <div class="uk-card-media-top">
+                {%if item.image%}
+                  <img src="{{item.image.url}}" alt="">
+                  {%endif%}
+
+            </div>
+            <div class="uk-card-body">
+
+<h1 class="uk-heading-line uk-text-center"><span>{{item.name}}</span></h1>
+                  <p><span class="uk-label">Category:</span>{{item.image_category}}</p>
+                  <p><span class="uk-label">Location:</span>{{item.image_location}}</p>
+                  <p><span class="uk-label">Description:</span>{{item.image_description}}</p>
+                  <a class="uk-button uk-button-danger" href="">Copy link</a>
+
+
+            </div>
+        </div>
+    </div>
+  </div>
+  {%endwith%}
+{% endblock %}

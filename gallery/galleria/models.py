@@ -10,7 +10,10 @@ class Location(models.Model):
         return self.location_name   
 
 class Category(models.Model):
-    category_title = models.CharField(max_length = 30)        
+    category_title = models.CharField(max_length = 30) 
+    def __str__(self):
+        return self.category_title
+       
 
 class Image(models.Model):
     image = models.ImageField(upload_to = 'gallery')
