@@ -54,7 +54,7 @@ DATABASES = {
 ```
 10. Run `./manage.py runserver` or `python3.6 manage.py runserver` to run the application
 
-# Support and Contacts
+## Support and Contacts
 
 In case You have any issues using this code please do no hesitate to get in touch with me through mburubeatricewanjiru@gmail.com or leave a commit here on github.
 
