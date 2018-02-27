@@ -13,11 +13,11 @@ class Category(models.Model):
     category_title = models.CharField(max_length = 30)        
 
 class Image(models.Model):
-    image = models.ImageField(upload_to = '^$')
+    image = models.ImageField(upload_to = 'gallery')
     image_name = models.CharField(max_length =30)
     image_description = models.CharField(max_length =100)
     image_location = models.ForeignKey(Location, null=True,blank=True)
-    image_category = models.ManyToManyField(Category)
+    image_category = models.ForeignKey(Category,null=True,blank=True)
     pub_date = models.DateTimeField(auto_now_add=True, null=True,blank=True)
 
     def __str__(self):
@@ -31,3 +31,4 @@ class Image(models.Model):
         galleria = cls.objects.filter(image_category__icontains=search_term)
 
         return galleria
+        

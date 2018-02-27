@@ -1,8 +1,11 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from .models import Image
 # Create your views here.
 def start(request):
-    return render(request,'start.html')
+    pictures = Image.objects.all()
+
+    return render(request,'start.html',{"pictures":pictures})
 
 def search_results(request):
     if 'image' in request.GET and request.GET["image"]:
@@ -15,3 +18,5 @@ def search_results(request):
     else:
         message = "You haven't searched for any term"
         return render(request, 'search.html',{"message":message}) 
+
+   
